@@ -1,0 +1,32 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "io.github.ennuil",
+		"id": "wrench_wrapper",
+		"version": "${version}",
+		"metadata": {
+			"name": "Wrench Wrapper",
+			"description": "A handy wrapper for your Quilt Config!",
+			"contributors": {
+				"Ennui Langeweile": "Owner"
+			},
+			"contact": {
+				"issues": "https://github.com/Up-Mods/wrench_wrapper/issues",
+				"sources": "https://github.com/Up-Mods/wrench_wrapper"
+			},
+			"icon": "assets/wrench_wrapper/icon.png",
+			"license": "CC0-1.0"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"load_type": "if_required",
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.26.0-beta.2"
+			}
+		]
+	},
+	"modmenu": {
+		"badges": ["library"]
+	}
+}
