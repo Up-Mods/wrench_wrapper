@@ -5,12 +5,18 @@ plugins {
 	alias libs.plugins.shadow
 }
 
+def ENV = System.getenv()
+def now = new Date()
+
+version = ENV.TAG ?: "development-${now.format('YY.MMdd.HHmm', TimeZone.getTimeZone('UTC'))}+${libs.versions.minecraft.get()}${(!ENV.TAG && ENV.BUILD_NUMBER) ? "-build.${ENV.BUILD_NUMBER}" : ''}"
+group = project.maven_group
+
 base {
-	archivesName = project.archives_base_name
+	archivesName.set("${rootProject.name}-fabric")
 }
 
-version = "$project.version+${libs.versions.minecraft.get()}"
-group = project.maven_group
+// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
+def javaVersion = 17
 
 repositories {
 	// Add repositories to retrieve artifacts from in here.
@@ -50,14 +56,11 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = 'UTF-8'
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
+	it.options.release.set(javaVersion)
 }
 
 java {
 	// Still required by IDEs such as Eclipse and Visual Studio Code
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
 
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task if it is present.
 	// If you remove this line, sources will not be generated.
@@ -66,11 +69,15 @@ java {
 	// If this mod is going to be a library, then it should also generate Javadocs in order to aid with development.
 	// Uncomment this line to generate them.
 	// withJavadocJar()
+
+	toolchain {
+		languageVersion.set(JavaLanguageVersion.of(javaVersion))
+	}
 }
 
 shadowJar {
 	from('LICENSE.md') {
-		rename { "${it}_${base.archivesName.get()}" }
+		rename { "LICENSE_${base.archivesName.get()}.md" }
 	}
 
 	archiveClassifier = null
@@ -95,5 +102,14 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+		if (ENV.MAVEN_UPLOAD_URL) {
+			maven {
+				url = ENV.MAVEN_UPLOAD_URL
+				credentials {
+					username = ENV.MAVEN_UPLOAD_USERNAME
+					password = ENV.MAVEN_UPLOAD_PASSWORD
+				}
+			}
+		}
 	}
 }
