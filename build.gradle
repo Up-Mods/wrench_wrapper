@@ -82,6 +82,9 @@ shadowJar {
 
 	archiveClassifier = null
 	configurations = [ project.configurations.shadow ]
+
+	// need this because of quilt loader
+	relocate 'com.electronwill', 'org.quiltmc.loader.impl.lib.electronwill'
 }
 
 tasks.named('build').configure {
