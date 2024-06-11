@@ -82,6 +82,8 @@ shadowJar {
 
 	archiveClassifier = null
 	configurations = [ project.configurations.shadow ]
+	enableRelocation = true
+	relocationPrefix = 'io.github.ennuil.wrench_wrapper.shadow'
 }
 
 tasks.named('build').configure {
