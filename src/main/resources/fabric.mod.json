@@ -15,7 +15,7 @@
 	"icon": "assets/wrench_wrapper/icon.png",
 	"environment": "*",
 	"depends": {
-		"fabricloader": ">=0.15.10"
+		"fabricloader": ">=0.16.2"
 	},
 	"custom": {
 		"modmenu": {
