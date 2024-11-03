@@ -1,0 +1,20 @@
+modLoader = "javafml"
+loaderVersion = "*"
+license = "All rights reserved"
+
+[[mods]]
+modId = "wrench_wrapper"
+version = "${version}"
+displayName = "Wrench Wrapper"
+logoFile = "assets/wrench_wrapper/icon.png"
+authors = "Ennui Langeweile"
+description = """
+A handy wrapper for your Quilt Config!
+"""
+
+[[dependencies.wrench_wrapper]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0.0-beta,)"
+ordering = "NONE"
+side = "BOTH"

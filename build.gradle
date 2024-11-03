@@ -6,9 +6,8 @@ plugins {
 }
 
 def ENV = System.getenv()
-def now = new Date()
 
-version = ENV.TAG ?: "development-${now.format('YY.MMdd.HHmm', TimeZone.getTimeZone('UTC'))}+${libs.versions.minecraft.get()}${(!ENV.TAG && ENV.BUILD_NUMBER) ? "-build.${ENV.BUILD_NUMBER}" : ''}"
+version = ENV.TAG ?: "0.0.0-development${(!ENV.TAG && ENV.BUILD_NUMBER) ? "-build.${ENV.BUILD_NUMBER}" : ''}"
 group = project.maven_group
 
 base {
@@ -47,9 +46,10 @@ dependencies {
 }
 
 processResources {
+	filteringCharset 'UTF-8'
 	inputs.properties 'version': version
 
-	filesMatching(['fabric.mod.json', 'quilt.mod.json']) {
+	filesMatching(['fabric.mod.json', 'quilt.mod.json', 'META-INF/neoforge.mods.toml']) {
 		expand 'version': version
 	}
 }
