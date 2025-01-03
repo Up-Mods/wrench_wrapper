@@ -7,7 +7,7 @@ plugins {
 
 def ENV = System.getenv()
 
-version = ENV.TAG ?: "0.0.0-development${(!ENV.TAG && ENV.BUILD_NUMBER) ? "-build.${ENV.BUILD_NUMBER}" : ''}"
+version = ENV.TAG ?: "0.0.0-development${ENV.BUILD_NUMBER ? "-build.${ENV.BUILD_NUMBER}" : ''}"
 group = project.maven_group
 
 base {
@@ -49,7 +49,7 @@ processResources {
 	filteringCharset 'UTF-8'
 	inputs.properties 'version': version
 
-	filesMatching(['fabric.mod.json', 'quilt.mod.json', 'META-INF/neoforge.mods.toml']) {
+	filesMatching(['fabric.mod.json', 'quilt.mod.json', 'META-INF/neoforge.mods.toml', 'META-INF/mods.toml']) {
 		expand 'version': version
 	}
 }

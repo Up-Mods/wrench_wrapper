@@ -3,8 +3,8 @@
 minecraft = "1.21.1"
 quilt_mappings = "1.21.1+build.3"
 
-quilt_loom = "1.8.4"
-quilt_loader = "0.26.4"
+quilt_loom = "1.8.5"
+quilt_loader = "0.27.0"
 shadow = "8.3.3"
 
 quilt_config = "1.3.2"
