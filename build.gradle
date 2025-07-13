@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'maven-publish'
-	alias libs.plugins.quilt.loom
+	alias libs.plugins.fabric.loom
 	alias libs.plugins.shadow
 }
 
@@ -10,19 +10,13 @@ def ENV = System.getenv()
 version = ENV.TAG ?: "0.0.0-development${ENV.BUILD_NUMBER ? "-build.${ENV.BUILD_NUMBER}" : ''}"
 group = project.maven_group
 
-base {
-	archivesName.set("${rootProject.name}-fabric")
-}
-
 // Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 def javaVersion = 17
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven {
+		url = "https://maven.quiltmc.org/repository/release/"
+	}
 }
 
 loom {
@@ -37,8 +31,8 @@ loom {
 // See https://docs.gradle.org/current/userguide/platforms.html for information on how version catalogs work.
 dependencies {
 	minecraft libs.minecraft
-	mappings variantOf(libs.quilt.mappings) { classifier 'intermediary-v2' }
-	modCompileOnly libs.quilt.loader
+	mappings loom.officialMojangMappings()
+	modCompileOnly libs.fabric.loader
 
 	shadow(libs.bundles.quilt.config) {
 		transitive = false
