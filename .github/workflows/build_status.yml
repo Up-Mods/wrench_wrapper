@@ -18,13 +18,11 @@ jobs:
           distribution: 'microsoft'
           java-version: 21
           cache: 'gradle'
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew build --rerun-tasks
       - name: Upload build artifacts (Universal)
         continue-on-error: true
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ github.event.repository.name }}-${{ github.sha }}
           path: |

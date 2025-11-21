@@ -22,8 +22,6 @@ jobs:
       - name: Copy Maven Upload URL
         id: extract_maven_upload_url
         run: echo "maven_upload_url=${{ secrets.MAVEN_UPLOAD_URL }}" >> $GITHUB_OUTPUT
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew assemble --rerun-tasks
       - name: Maven Release
@@ -35,10 +33,10 @@ jobs:
         run: ./gradlew publish
       - name: Publish (GitHub Releases)
         id: publish_github
-        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # (new) v3.3.0
+        uses: Kira-NT/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # (new) v3.3.0
         with:
           github-token: ${{ github.token }}
           version: ${{ env.TAG }}
           files: |
-            build/libs/!(*-@(dev|sources|javadoc|slim)).jar
-            build/libs/*-@(sources|javadoc).jar
+            ./**/build/libs/!(*-@(dev|sources|javadoc|slim)).jar
+            ./**/build/libs/*-@(sources|javadoc).jar

@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "wrench_wrapper_backend",
+	"version": "${version}",
+	"name": "Wrench Wrapper (Backend)",
+  "description": "A handy wrapper for your Quilt Config!",
+	"authors": [
+		"Ennui Langeweile"
+	],
+	"contact": {
+		"issues": "https://github.com/Up-Mods/wrench_wrapper/issues",
+		"sources": "https://github.com/Up-Mods/wrench_wrapper"
+	},
+	"license": "MIT",
+	"icon": "assets/wrench_wrapper/icon.png",
+	"environment": "*",
+	"depends": {
+		"fabricloader": ">=0.16.2"
+	},
+	"custom": {
+		"modmenu": {
+			"badges": ["library"]
+		}
+	}
+}

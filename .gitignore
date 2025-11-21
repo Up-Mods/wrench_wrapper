@@ -4,10 +4,6 @@ build/
 out/
 classes/
 
-# Quilt Loom
-remappedSrc/
-run/
-
 # Eclipse
 *.launch
 

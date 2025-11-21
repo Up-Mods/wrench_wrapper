@@ -1,0 +1,13 @@
+modLoader = "lowcodefml"
+loaderVersion = "*"
+license = "MIT"
+
+[[mods]]
+modId = "wrench_wrapper"
+version = "${version}"
+displayName = "Wrench Wrapper"
+logoFile = "icon.png"
+authors = "Ennui Langeweile"
+description = """
+A handy wrapper for your Quilt Config!
+"""
