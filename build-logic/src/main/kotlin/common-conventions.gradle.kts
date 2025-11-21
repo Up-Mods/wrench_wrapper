@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "page.langeweile.wrench_wrapper"
-version = "0.7.1"
+version = "0.7.2"
 
 // We want Java 17 because we don't aim to support Java 8 for now
 java {
