@@ -54,7 +54,7 @@ publishing {
         if (env.contains("MAVEN_UPLOAD_URL")) {
             maven(uri(env["MAVEN_UPLOAD_URL"]!!)) {
                 credentials {
-                    username = env["MAVEN_UPLOAD_NAME"]
+                    username = env["MAVEN_UPLOAD_USERNAME"]
                     password = env["MAVEN_UPLOAD_PASSWORD"]
                 }
             }
