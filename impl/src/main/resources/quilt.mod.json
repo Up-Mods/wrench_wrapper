@@ -8,7 +8,8 @@
 			"name": "Wrench Wrapper (Backend)",
 			"description": "A handy wrapper for your Quilt Config!",
 			"contributors": {
-				"Ennui Langeweile": "Owner"
+				"Ennui Langeweile": "Wrench Wrapper Developer",
+				"The Quilt Project": "Quilt Config Developer"
 			},
 			"contact": {
 				"issues": "https://github.com/Up-Mods/wrench_wrapper/issues",
@@ -18,7 +19,7 @@
 			"license": "MIT"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"load_type": "if_possible",
+		"load_type": "if_required",
 		"depends": [
 			{
 				"id": "quilt_loader",

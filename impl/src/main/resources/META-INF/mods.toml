@@ -1,6 +1,6 @@
 modLoader = "lowcodefml"
 loaderVersion = "*"
-license = "All rights reserved"
+license = "MIT"
 
 [[mods]]
 modId = "wrench_wrapper_backend"

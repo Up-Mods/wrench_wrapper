@@ -5,7 +5,8 @@
 	"name": "Wrench Wrapper (Backend)",
   "description": "A handy wrapper for your Quilt Config!",
 	"authors": [
-		"Ennui Langeweile"
+		"Ennui Langeweile",
+		"The Quilt Project"
 	],
 	"contact": {
 		"issues": "https://github.com/Up-Mods/wrench_wrapper/issues",
