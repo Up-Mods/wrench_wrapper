@@ -48,4 +48,16 @@ publishing {
             from(components["java"])
         }
     }
+
+    repositories {
+        val env = System.getenv()
+        if (env.contains("MAVEN_UPLOAD_URL")) {
+            maven(uri(env["MAVEN_UPLOAD_URL"]!!)) {
+                credentials {
+                    username = env["MAVEN_UPLOAD_NAME"]
+                    password = env["MAVEN_UPLOAD_PASSWORD"]
+                }
+            }
+        }
+    }
 }
