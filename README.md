@@ -1,5 +1,10 @@
 # Wrench Wrapper
 
+> [!CAUTION]
+> This library is still in development and breaking changes may happen frequently!
+> 
+> Do not use Wrench Wrapper unless your name is Ennui.
+
 An absolute genius way of using your Quilt Config with:
  - No bloat!
  - No relocating your packages!
