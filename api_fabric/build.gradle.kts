@@ -1,15 +1,5 @@
 plugins {
-    `java-library`
-    `maven-publish`
-}
-
-group = "page.langeweile.wrench_wrapper"
-version = rootProject.version
-
-repositories {
-    mavenCentral()
-    maven("https://maven.fabricmc.net")
-    maven("https://maven.quiltmc.org/repository/release/")
+    id("common-conventions")
 }
 
 dependencies {
@@ -19,23 +9,4 @@ dependencies {
     compileOnly(libs.fabric.loader)
     compileOnly(libs.quilt.loader)
     compileOnly(libs.jspecify)
-}
-
-tasks.processResources {
-    filteringCharset = "UTF-8"
-
-    val version = project.version
-    inputs.property("version", version)
-
-    filesMatching("fabric.mod.json") {
-        expand("version" to version)
-    }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
-        }
-    }
 }
