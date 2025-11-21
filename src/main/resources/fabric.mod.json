@@ -5,13 +5,17 @@
 	"name": "Wrench Wrapper",
 	"description": "A handy wrapper for your Quilt Config!",
 	"authors": [
-		"Ennui Langeweile"
+		"Ennui Langeweile",
+		"The Quilt Project"
 	],
 	"contact": {
 		"issues": "https://github.com/Up-Mods/wrench_wrapper/issues",
 		"sources": "https://github.com/Up-Mods/wrench_wrapper"
 	},
-	"license": "CC0-1.0",
+	"license": [
+		"MIT",
+		"Apache-2.0"
+	],
 	"icon": "assets/wrench_wrapper/icon.png",
 	"environment": "*",
 	"depends": {

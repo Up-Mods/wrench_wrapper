@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "*"
-license = "All rights reserved"
+license = "MIT"
 
 [[mods]]
 modId = "wrench_wrapper"
 version = "${version}"
 displayName = "Wrench Wrapper"
 logoFile = "assets/wrench_wrapper/icon.png"
-authors = "Ennui Langeweile"
+authors = "Ennui Langeweile, The Quilt Project"
 description = """
 A handy wrapper for your Quilt Config!
 """
