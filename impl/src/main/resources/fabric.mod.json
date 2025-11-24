@@ -20,6 +20,7 @@
 	},
 	"custom": {
 		"modmenu": {
+			"parent": "wrench_wrapper",
 			"badges": ["library"]
 		}
 	}

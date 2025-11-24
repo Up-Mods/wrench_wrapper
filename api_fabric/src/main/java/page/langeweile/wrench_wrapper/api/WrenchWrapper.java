@@ -17,6 +17,7 @@ public class WrenchWrapper {
 		}
 	}
 
+	@NonNull
 	public static ConfigEnvironment getConfigEnvironment() {
 		if (FabricLoader.getInstance().isModLoaded("quilt_loader")) {
 			return QuiltWrapper.getConfigEnvironment();

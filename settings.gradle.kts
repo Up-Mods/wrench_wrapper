@@ -15,9 +15,7 @@ dependencyResolutionManagement {
                 maven("https://maven.quiltmc.org/repository/release/")
             }
             filter {
-                includeGroup("org.quiltmc")
-                includeGroup("org.quiltmc.parsers")
-                includeGroup("org.quiltmc.quilt-config.serializers")
+                includeGroupAndSubgroups("org.quiltmc")
             }
         }
         exclusiveContent {

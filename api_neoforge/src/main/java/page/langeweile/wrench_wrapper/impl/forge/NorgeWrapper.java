@@ -1,6 +1,6 @@
-package page.langeweile.wrench_wrapper.impl.norge;
+package page.langeweile.wrench_wrapper.impl.forge;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 import org.quiltmc.config.api.ReflectiveConfig;
 import org.quiltmc.config.api.serializers.Json5Serializer;
 import org.quiltmc.config.implementor_api.ConfigEnvironment;
