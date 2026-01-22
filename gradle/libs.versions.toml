@@ -1,7 +1,6 @@
-# The latest versions are available at https://quiltmc.org/en/usage/latest-versions/
 [versions]
 gr8 = "0.11.2"
-r8 = "8.13.17"
+r8 = "9.0.32"
 
 fabric_loader = "0.18.1"
 quilt_loader = "0.29.2"
