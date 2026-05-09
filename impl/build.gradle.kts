@@ -11,6 +11,7 @@ dependencies {
     shade(libs.bundles.quilt.config)
 }
 
+// TODO - Replace this horrid plugin!!!
 gr8 {
     val optimizedJar = create("shrink") {
         addProgramJarsFrom(shade)

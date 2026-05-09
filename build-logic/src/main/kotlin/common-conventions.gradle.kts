@@ -18,7 +18,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 tasks.withType<Jar>().configureEach {
-    from(rootProject.file("LICENSE_wrench-wrapper.md")) {
+    from(rootDir) {
         include("LICENSE_wrench-wrapper.md")
     }
 }

@@ -11,4 +11,3 @@ dependencies {
     }
     compileOnly(libs.jspecify)
 }
-

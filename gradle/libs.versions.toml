@@ -1,8 +1,8 @@
 [versions]
 gr8 = "0.11.2"
-r8 = "9.0.32"
+r8 = "9.1.31"
 
-fabric_loader = "0.18.1"
+fabric_loader = "0.19.2"
 quilt_loader = "0.29.2"
 fancy_mod_loader = "1.0.12"
 forge_mod_loader = "47.2.3"
