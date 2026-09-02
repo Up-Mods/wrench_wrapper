@@ -1,23 +1,21 @@
 plugins {
     id("common-conventions")
-    alias(libs.plugins.gr8)
+    alias(libs.plugins.shadow)
 }
-
-val shade = configurations.create("shade")
 
 dependencies {
     implementation(libs.bundles.quilt.config)
     implementation(libs.jspecify)
-    shade(libs.bundles.quilt.config)
+    shadow(libs.bundles.quilt.config)
 }
 
-// TODO - Replace this horrid plugin!!!
-gr8 {
-    val optimizedJar = create("shrink") {
-        addProgramJarsFrom(shade)
-        addProgramJarsFrom(tasks.jar)
-        proguardFile(file("rules.pro"))
-        r8Version(libs.versions.r8.get())
+tasks.shadowJar {
+    archiveClassifier = ""
+
+    minimize {
+        r8 {
+            enableOptimization()
+            keepRuleFiles.from(layout.projectDirectory.file("rules.pro"))
+        }
     }
-    replaceOutgoingJar(optimizedJar)
 }
