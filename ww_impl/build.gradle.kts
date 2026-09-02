@@ -11,6 +11,7 @@ dependencies {
 
 tasks.shadowJar {
     archiveClassifier = ""
+    entryCompression = ZipEntryCompression.STORED
 
     minimize {
         r8 {
