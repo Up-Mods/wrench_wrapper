@@ -51,7 +51,7 @@ plugins {
 }
 
 includeBuild("build-logic")
-include("api_fabric")
-include("api_forge")
-include("api_neoforge")
-include("impl")
+include("ww_api_fabric")
+include("ww_api_forge")
+include("ww_api_neoforge")
+include("ww_impl")
