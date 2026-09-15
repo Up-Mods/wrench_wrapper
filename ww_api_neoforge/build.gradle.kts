@@ -11,3 +11,7 @@ dependencies {
     }
     compileOnly(libs.jspecify)
 }
+
+tasks.jar.configure {
+    entryCompression = ZipEntryCompression.STORED
+}

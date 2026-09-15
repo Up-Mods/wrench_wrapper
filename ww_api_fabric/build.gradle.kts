@@ -10,3 +10,7 @@ dependencies {
     compileOnly(libs.quilt.loader)
     compileOnly(libs.jspecify)
 }
+
+tasks.jar.configure {
+    entryCompression = ZipEntryCompression.STORED
+}
