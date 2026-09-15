@@ -25,7 +25,6 @@ jobs:
         run: ./gradlew build
 
       - name: Maven Release
-        if: ${{ secrets.MAVEN_UPLOAD_URL }}
         env:
           MAVEN_UPLOAD_URL: ${{ secrets.MAVEN_UPLOAD_URL }}
           MAVEN_UPLOAD_USERNAME: ${{ secrets.MAVEN_UPLOAD_USERNAME }}
